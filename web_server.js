@@ -1,6 +1,7 @@
 var http = require('http')
 
 http.createServer((req, res) => {
-    res.write('Ground conrol to major Tom.')
+    res.writeHead(200, {'Content-Type' : 'text/html'})
+    res.write('<h1>Ground conrol to major Tom.</h1>')
     res.end()
 }).listen(3000)

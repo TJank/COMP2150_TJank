@@ -8,5 +8,17 @@ fs.readFile('./data.json', (err, data) => {
 })
 
 
+var myData = {
+    "name" : "jane",
+    "message" : "Hi there!"
+}
+
+
+// write to a file
+fs.writeFile('./data.json', JSON.stringify(myData), (error) => {
+    if(error)
+        return console.error(error)
+    console.log('File written successfully')
+})
 
 

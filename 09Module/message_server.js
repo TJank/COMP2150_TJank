@@ -59,6 +59,30 @@ const server = http.createServer((req, res) => {
                     }
                 });
             break;
+
+            case 'DELETE':
+            fs.readFile('./data', 'utf-8', (err, data) => {
+                let dataArr = data.split("\n");
+                let incoming_url = url.parse(req.url, true);
+                u = u.slice(1,);
+                let elToRemove = parseInt(u);
+
+                if(elToRemove < dataArr.length) {
+                    dataArr.splice(elToRemove, 1);
+                    fs.writeFile('./data', '', (err) => {
+                        console.error(err);
+                    });
+                dataArr.forEach(element => {
+                    fs.appendFile('./data', element + "\n", (err) => {
+                        console.error(err);
+                    });
+                });
+                res.writeHead(200, {'Content-Type' : 'text/plain'});
+                res.body = 'Resource deleted';
+                res.write(res.body)
+                res.end();
+                }
+            })
         
             default:
                 res.writeHead(405, {'Content-Type' : 'text/plain'});

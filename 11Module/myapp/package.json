@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-    "express": "^4.16.3"
-  },
+  
   "name": "myapp",
   "version": "1.0.0",
   "description": "learning express",
@@ -26,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/%20TJank/https%3A%2F%2Fgithub.com%2FTJank%2FCOMP2150_TJank/issues"
   },
-  "homepage": "https://github.com/%20TJank/https%3A%2F%2Fgithub.com%2FTJank%2FCOMP2150_TJank#readme"
+  "homepage": "https://github.com/%20TJank/https%3A%2F%2Fgithub.com%2FTJank%2FCOMP2150_TJank#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

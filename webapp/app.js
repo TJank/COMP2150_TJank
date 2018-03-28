@@ -1,3 +1,5 @@
+import { mongo } from 'mongoose';
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,6 +10,16 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// Set up mongoose connection
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://tjdbuser:tjdbpass@ds037185.mlab.com:37185/local_library_tj';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -8,6 +8,8 @@ var genre_controller = require('../controllers/genreController')
 var bookinstance_controller = require('../controllers/bookinstanceController')
 
 // Book Routes *****
+
+// Get the home page
 router.get('/', book_controller.index);
 
 // Create a book

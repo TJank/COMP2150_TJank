@@ -3,7 +3,7 @@ var router = express.Router();
 
 // GET information about this project
 router.get('/', function(req, res, next) {
-    res.send('My project is about... AN API THAT I CREATED MYSELF')
+    res.send('My API is an API for the game "Counter Strike: Global Offensive", and will contain information about the pro teams and the pro players.')
 });
 
 
